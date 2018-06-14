@@ -1,1 +1,47 @@
-hello word
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            border: 1px solid #000;
+            /*overflow: hidden;   给父元素添加overflowhidden*/
+        }
+        .son{
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            margin:10px;
+            float: left;
+        }
+        /* 在浮动元素最后新增一个div然后添加属性
+        .son+div {
+            clear: both;
+        }*/
+        .son2 {
+            background-color: #ccc;
+            /*width: 300px;*/
+            height: 300px;
+            background-color: red;
+        }
+        .clearfix:after {
+            content: '';
+            display: block;
+            height: 0;
+            visibility: hidden;
+            clear: both;
+        }
+        .clearfix {
+            *zoom:1;   /*ie6 ie7专用清除浮动*/
+        }
+    </style>
+</head>
+<body>
+<div class="box clearfix">
+    <div class="son"></div>
+    <div></div>
+</div>
+    <div class="son2"></div>
+</body>
+</html>
